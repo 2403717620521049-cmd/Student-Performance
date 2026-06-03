@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Student = require("../models/Student");
 
-// CREATE
 router.post("/", async (req, res) => {
   try {
     const student = await Student.create(req.body);
@@ -12,7 +11,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-// READ ALL
 router.get("/", async (req, res) => {
   try {
     const students = await Student.find();
@@ -22,7 +20,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// READ ONE
 router.get("/:id", async (req, res) => {
   try {
     const student = await Student.findById(req.params.id);
@@ -39,7 +36,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// UPDATE
 router.put("/:id", async (req, res) => {
   try {
     const student = await Student.findByIdAndUpdate(
@@ -54,7 +50,6 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// DELETE
 router.delete("/:id", async (req, res) => {
   try {
     await Student.findByIdAndDelete(req.params.id);
@@ -68,6 +63,3 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
-
-
-
