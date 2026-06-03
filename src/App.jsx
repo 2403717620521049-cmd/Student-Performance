@@ -8,13 +8,24 @@ import Features from "./components/Features";
 import Dashboard from "./components/Dashboard";
 import Footer from "./components/Footer";
 
+import Register from "./Register";
+import Login from "./Login";
+import StudentList from "./StudentList";
+
 function App() {
   return (
     <div>
       <Header />
       <Navbar />
+
+      <Register />
+      <Login />
+
       <About />
       <Features />
+
+      <StudentList />
+
       <Dashboard />
       <Footer />
     </div>
